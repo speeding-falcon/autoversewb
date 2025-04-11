@@ -36,5 +36,6 @@
     <a href="login.php">Login</a><br>
     <a href="logout.php">Logout</a><br>
     <a href="createcar.php">Sell Your car</a><br>
+    <a href="cart.php">View your cart</a><br>
 </body>
 </html>
