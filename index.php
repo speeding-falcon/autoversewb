@@ -12,6 +12,11 @@
         echo "Account: {$row['username']}<br>";
     }
     }
+    else{
+
+        sleep(2);
+        header("Location: login.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +27,12 @@
     <title>HomePage</title>
 </head>
 <body>
+    <form action="listing.php" name="cpnysubform" id="cpnysubform" method="post">
+        <input type="text" name="searchcpny" id="searchcpny" placeholder="search by company">
+        <input type="submit" name="cpnysubmit" id="cpnysubmit">
+    </form>
+        
+    </form>
     <a href="login.php">Login</a><br>
     <a href="logout.php">Logout</a><br>
     <a href="createcar.php">Sell Your car</a><br>

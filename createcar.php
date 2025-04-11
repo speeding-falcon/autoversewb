@@ -17,6 +17,7 @@
         $ow = $_POST["owne"];
         $regno = $_POST["regno"];
         $feat = $_POST["feat"];
+        $sp = $_POST["sp"];
 
         // echo "vtype = $vtype";
         // echo "sellerid = $sellerid";
@@ -35,7 +36,7 @@
             if(move_uploaded_file($tempName,$targetPath)){
                 echo "<img src='$targetPath' width='300' height='200'>";
                 try{
-                    $query = "INSERT into cardata values ('$avbt','','$sellerid','$vtype','$cpn','$model','$mdate','$odo','$gear','$fuel','$ow','$regno','$feat','$targetPath')";
+                    $query = "INSERT into cardata values ('$avbt','$sp','','$sellerid','$vtype','$cpn','$model','$mdate','$odo','$gear','$fuel','$ow','$regno','$feat','$targetPath')";
                     mysqli_query($conn,$query);
 
                     echo "<script>alert('created a post');</script>";
@@ -68,6 +69,7 @@
     Vehicle Type:  <select name="vtype" ><option value="SUV">SUV</option><option value="sedan">Sedan</option><option value="hatchback">Hatchback</option><option value="bike">Bike</option></select><br><br>
 	Company: <input type="text" id="company" name="cpny" required><br><br>
 	Model Name: <input type="text" id="mdln" name="mdln" required><br><br>
+    Selling Price(Rupees): <input type="number" name="sp" id="sp" required><br><br>
 	Manufacture date: <input type="date" id="mfd" name="mfd" required><br><br>
 	Odometer(distance in km): <input type="number" name="odo" id="odo" required><br><br>
 	Transmission: <select name="trans" ><option value="Manual">Manual</option><option value="Automatic">Automatic</option></select><br><br>
