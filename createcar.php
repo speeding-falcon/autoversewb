@@ -1,7 +1,24 @@
 <?php
     require 'config.php';
     if($_SESSION["login"]){
+        
+
+        if($_SESSION["login"] == true){
+        
+        
+        $idd = $_SESSION["id"];
+        $result = mysqli_query($conn,"SELECT * FROM userstable WHERE id='$idd'");
+        $row = mysqli_fetch_assoc($result);
+        echo "LOgged in as $idd <br>";
+        if(mysqli_num_rows($result)>0){
+            echo "Account: {$row['username']}<br>";
+        }
+        }
+        else{
     
+            sleep(2);
+            header("Location: login.php");
+        }
     
 
     if(isset($_POST["carsubmit"])){
@@ -80,5 +97,6 @@
 	Photo: <input type="file" name="photo" accept=".jpg, .jpeg, .png" required><br><br>
 	<input type="submit" value="add car" name="carsubmit">
 </form>
+<a href="index.php">Back To Home</a>
 </body>
 </html>
