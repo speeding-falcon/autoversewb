@@ -1,0 +1,234 @@
+
+    body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('last.jpg') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  color: #333333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-end; /* Aligns content to the right */
+  align-items: center;
+  padding-right: 40px; /* Optional padding from right edge */
+}
+
+body, label, input, select, textarea, button, .file-text, .file-info, .user-status, h1 {
+  color: white;
+}
+
+    
+.container {
+  max-width: 800px;
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.2); /* Transparent white */
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  backdrop-filter: blur(5px); /* Blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  margin: 40px 0;
+}
+
+    
+header {
+  background-color: rgba(44, 62, 80, 0.4); /* Semi-transparent dark background */
+  color: white;
+  padding: 30px;
+  text-align: center;
+  backdrop-filter: blur(5px); /* Optional: add subtle blur behind */
+  -webkit-backdrop-filter: blur(5px); /* Safari support */
+}
+
+    
+    h1 {
+      margin: 0;
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    
+    .user-status {
+      margin: 0;
+      font-size: 16px;
+      opacity: 0.9;
+    }
+    
+    .username {
+      font-weight: 600;
+    }
+    
+    .form-container {
+      padding: 30px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700; /* Bold */
+  color: white;     /* White text */
+}
+
+    
+    input, select, textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.1); /* Transparent white */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: white;
+  box-sizing: border-box;
+}
+
+    
+    input:focus, select:focus, textarea:focus {
+      border-color: #4ca1af;
+      box-shadow: 0 0 0 3px rgba(76, 161, 175, 0.2);
+      outline: none;
+    }
+    
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+    
+    .file-wrapper {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    
+    .file-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1); /* transparent background */
+  backdrop-filter: blur(8px); /* blur effect */
+  -webkit-backdrop-filter: blur(8px); /* for Safari */
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-bottom: 5px;
+}
+
+    
+.file-label:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+    
+    .file-text {
+  font-weight: 700; /* bold */
+  color: white;     /* white text */
+  font-size: 16px;
+}
+
+    
+    input[type="file"] {
+      position: absolute;
+      left: -9999px;
+    }
+    
+    .file-info {
+  display: block;
+  font-size: 13px;
+  color: white;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+    
+    button {
+  background: linear-gradient(to right, #2c3e50, #434343); /* dark gray gradient */
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+    #vtype {
+  color: white; /* White when closed */
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Style the dropdown options */
+#vtype option {
+  color: black;  /* Black inside dropdown */
+  background-color: white;
+}
+
+
+button:hover {
+  background: linear-gradient(to right, #1f2a38, #363636);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+#vtype, #trans, #fuel {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#vtype option,
+#trans option,
+#fuel option {
+  color: black;
+  background-color: white;
+}
+
+
+    
+    @media (max-width: 768px) {
+      .container {
+        width: 95%;
+        margin: 20px 0;
+      }
+      
+      header {
+        padding: 20px;
+      }
+      
+      h1 {
+        font-size: 26px;
+      }
+      
+      .form-container {
+        padding: 20px;
+      }
+      
+      input, select, textarea {
+        padding: 10px 12px;
+      }
+      
+      button {
+        padding: 12px 24px;
+        font-size: 16px;
+      }
+    }
+  

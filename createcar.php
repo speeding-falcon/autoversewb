@@ -9,9 +9,9 @@
         $idd = $_SESSION["id"];
         $result = mysqli_query($conn,"SELECT * FROM userstable WHERE id='$idd'");
         $row = mysqli_fetch_assoc($result);
-        echo "LOgged in as $idd <br>";
+        //echo "LOgged in as $idd <br>";
         if(mysqli_num_rows($result)>0){
-            echo "Account: {$row['username']}<br>";
+            //echo "Account: {$row['username']}<br>";
         }
         }
         else{
@@ -30,11 +30,12 @@
         $mdate = date('Y-m-d',strtotime($_POST["mfd"]));
         $odo = $_POST["odo"];
         $gear = $_POST["trans"];
+        $sp = $_POST["price"];
         $fuel = $_POST["fuel"];
         $ow = $_POST["owne"];
         $regno = $_POST["regno"];
         $feat = $_POST["feat"];
-        $sp = $_POST["sp"];
+        //$sp = $_POST["sp"];
 
         // echo "vtype = $vtype";
         // echo "sellerid = $sellerid";
@@ -78,10 +79,133 @@
 
 <html>
 <head>
-<title>Sell Car</title>
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SELL VEHICLE-AUTOVERSE</title>
+    <link rel="stylesheet" type="text/css" href="sellcarstyle.css">
+  </head>
 <body>
-<p>signed in as: </p>
+
+<div class="container">
+    <header>
+      <h1>List Your Vehicle</h1>
+      <p class="user-status">
+      <?php  
+      if($_SESSION["login"] == true){
+        
+        
+        $idd = $_SESSION["id"];
+        $result = mysqli_query($conn,"SELECT * FROM userstable WHERE id='$idd'");
+        $row = mysqli_fetch_assoc($result);
+        //echo "LOgged in as $idd <br>";
+        if(mysqli_num_rows($result)>0){
+            echo "Logged in as: {$row['username']}<br>";
+        }
+        }
+        else{
+    
+            sleep(2);
+            header("Location: login.php");
+        }
+      ?>  
+      </p>
+    </header>
+    
+    <div class="form-container">
+      <form name="crform" id="crform" action="createcar.php" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="vtype">Vehicle Type:</label>
+          <select name="vtype" id="vtype" required>
+            <option value="SUV">SUV</option>
+            <option value="sedan">Sedan</option>
+            <option value="hatchback">Hatchback</option>
+            <option value="hatchback">Sports</option>
+            <option value="hatchback">3-Wheeler</option>
+            <option value="hatchback">Heavy Vehicle</option>
+            <option value="bike">Bike</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="company">Company:</label>
+          <input type="text" id="company" name="cpny" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="mdln">Model Name:</label>
+          <input type="text" id="mdln" name="mdln" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="mfd">Manufacture date:</label>
+          <input type="date" id="mfd" name="mfd" required>
+        </div>
+
+        <div class="form-group">
+          <label for="mfd">Selling Price:</label>
+          <input type="number" id="price" name="price" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="odo">Odometer (distance in km):</label>
+          <input type="number" name="odo" id="odo" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="trans">Transmission:</label>
+          <select name="trans" id="trans" required>
+            <option value="Manual">Manual</option>
+            <option value="Automatic">Automatic</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="fuel">Fuel:</label>
+          <select name="fuel" id="fuel" required>
+            <option value="Petrol">Petrol</option>
+            <option value="Diesel">Diesel</option>
+            <option value="CNG">CNG</option>
+            <option value="Electric">Electric</option>
+            <option value="Hybrid">Hybrid</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="owne">Ownership:</label>
+          <input type="number" name="owne" id="owne" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="regno">Registration Number:</label>
+          <input type="text" name="regno" id="regno" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="feat">Features:</label>
+          <textarea name="feat" id="feat" required></textarea>
+        </div>
+        
+        <div class="form-group">
+          <div class="file-wrapper">
+            <label for="photo" class="file-label">
+              <span class="file-text">Upload Vehicle Photo</span>
+            </label>
+            <input type="file" name="photo" id="photo" accept=".jpg, .jpeg, .png" required>
+            <span class="file-info">Accepted formats: JPG, JPEG, PNG</span>
+          </div>
+        </div>
+        
+        <div class="form-submit">
+          <button type="submit" name="carsubmit">Add Vehicle</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+
+<!-- <p>signed in as: </p>
 <form name="crform" id="crform" action="createcar.php" method="post" enctype="multipart/form-data" required>
     Vehicle Type:  <select name="vtype" ><option value="SUV">SUV</option><option value="sedan">Sedan</option><option value="hatchback">Hatchback</option><option value="bike">Bike</option></select><br><br>
 	Company: <input type="text" id="company" name="cpny" required><br><br>
@@ -97,6 +221,6 @@
 	Photo: <input type="file" name="photo" accept=".jpg, .jpeg, .png" required><br><br>
 	<input type="submit" value="add car" name="carsubmit">
 </form>
-<a href="index.php">Back To Home</a>
+<a href="index.php">Back To Home</a> -->
 </body>
 </html>

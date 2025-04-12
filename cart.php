@@ -16,15 +16,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listing</title>
-    <link rel="stylesheet" type="text/css" href="buy.css">
+    <link rel="stylesheet" href="cartbu.css"> 
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>CART-AUTOVERSE</title>
 </head>
-<body>
+<body id="cartbody">
+<header class="header">
+        <a href="#" class="logo"><ion-icon name="car-sport"></ion-icon>AUTOVERSE</a>
+        <?php echo  "<h3>These cars ARE IN YOUR CART: $unam </h3>"; ?>
+    <nav class="nav">
+        <a href="index.php">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Reviews</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
 
 <div class="wrap">
     <?php
         if(mysqli_num_rows($result)>0){
-            echo  "These cars ARE IN YOUR CART: $unam <br>";
+            //echo  "These cars ARE IN YOUR CART: $unam <br>";
                 while($ctrow = mysqli_fetch_array($cartresult)){
                     $carid = $ctrow["carid"];
                     $carq = "SELECT * FROM cardata WHERE carid= '$carid'";

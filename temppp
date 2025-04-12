@@ -1,0 +1,34 @@
+<div class='card1'>
+    <div class='image-section'>
+      <img class='im1' src='last.jpg' alt='Toyota Camry SE Hybrid'>
+    </div>
+    
+    <div class='details-section'>
+      <div class='vehicle-header'>
+        <h2 class='vehicle-name'>Toyota Camry</h2>
+        <h2 class='vehicle-model'>SE Hybrid</h2>
+      </div>
+      
+      <div class='vehicle-details'>
+        <p><span>Vehicle Type:</span> Sedan</p>
+        <p><span>Manufacture Date:</span> 2023</p>
+        <p><span>Price:</span> 3,250,000 Rs</p>
+        <p><span>Seller:</span> Premium Auto Sales</p>
+        <p><span>Seller Phone:</span> +91 98765 43210</p>
+        <p><span>Seller Email:</span> sales@premiumauto.com</p>
+        <p><span>Availability:</span> In Stock</p>
+        <p><span>Past owners:</span> 1</p>
+        <p><span>Transmission:</span> Automatic</p>
+        <p><span>Fuel:</span> Petrol Hybrid</p>
+        <p><span>Mileage:</span> 15,000 km</p>
+        <p><span>Car UID:</span> CAM2023SE15</p>
+      </div>
+      
+      <div class='action-area'>
+        <form class='buy-form'>
+          <input type='hidden' value='CAM2023SE15' name='hh'>
+          <button type='submit' class='buy-button' name='buyb'>BUY VEHICLE</button>
+        </form>
+      </div>
+    </div>
+  </div>

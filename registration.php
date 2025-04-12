@@ -101,10 +101,6 @@
         regex: /^[a-zA-Z0-9_]{3,16}$/,
         message: "Username must be 3–16 characters, using letters, numbers, or underscores."
       },
-      pword: {
-        regex: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/,
-        message: "Password must be at least 6 characters and include a letter and a number."
-      },
       email: {
         regex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
         message: "Please enter a valid email address."

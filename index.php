@@ -72,7 +72,7 @@
                     
                 </div>
                 <div class="category">
-                    <ion-icon name="car"></ion-icon>
+                    <a href="listing.php"><ion-icon name="car"></ion-icon></a>
                     <span>New cars</span>
                 </div>
                 <div class="category">
@@ -101,7 +101,7 @@
                 
                 <ion-icon name="search"></ion-icon>
                 <!-- <input type="text" placeholder="Search for your favourite cars"> -->
-                <input type="text" name="searchcpny" id="searchcpny" placeholder="search by company">
+                <input type="text" name="searchcpny" id="searchcpny" placeholder="search by company/model/type of car">
                 <!-- <input type="submit" name="cpnysubmit" id="cpnysubmit"> -->
                 
             </div>
