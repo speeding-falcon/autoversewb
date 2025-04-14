@@ -28,7 +28,7 @@
         <title>
             AUTOVERSE-LOGIN
         </title>
-        <link rel="stylesheet" href="loginstyle.css">
+        <link rel="stylesheet" href="loginstyle1.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">

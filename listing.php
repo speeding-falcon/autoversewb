@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="buy.css"> 
+    <link rel="stylesheet" href="buy2.css"> 
     <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>BuyCar</title>
@@ -40,7 +40,7 @@
 
 <?php
     if($cpnynam!=''){
-        $query = "SELECT * FROM cardata WHERE company='$cpnynam' or model='$cpnynam' or cartype='$cpnynam'";
+        $query = "SELECT * FROM cardata WHERE company='$cpnynam' or model='$cpnynam' or cartype='$cpnynam' or avbstatus='$cpnynam'";
         $result = mysqli_query($conn,$query);
         //$row = mysqli_fetch_assoc($result);
         if(mysqli_num_rows($result)>0){

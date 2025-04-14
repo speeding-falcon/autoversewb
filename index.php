@@ -96,6 +96,7 @@
                     <span>More</span>
                 </div>
             </div>
+            
             <form action="listing.php" name="cpnysubform" id="cpnysubform" method="post">
             <div class="search-bar">
                 
